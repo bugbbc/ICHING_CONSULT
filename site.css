@@ -573,6 +573,7 @@ img {
 .practice-card,
 .manifesto-panel {
   background: linear-gradient(180deg, rgba(251, 247, 240, 0.97), rgba(239, 231, 219, 0.94));
+  color: var(--text);
 }
 
 .hero-card,
@@ -653,6 +654,7 @@ img {
 .cta-strip p,
 .manifesto-panel p {
   margin: 0.72rem 0 0;
+  color: var(--text);
 }
 
 .hero-brief {
@@ -695,6 +697,7 @@ img {
     linear-gradient(180deg, rgba(8, 17, 27, 0.98), rgba(18, 33, 48, 0.96));
   border-color: rgba(251, 247, 240, 0.08);
   box-shadow: var(--shadow-strong);
+  color: var(--paper-soft);
 }
 
 .hero-card.secondary::after {
@@ -718,6 +721,7 @@ img {
 .point-list li {
   position: relative;
   padding-left: 1rem;
+  color: var(--text);
 }
 
 .point-list li::before {
@@ -1038,6 +1042,11 @@ img {
   padding-left: 1.1rem;
   display: grid;
   gap: 0.55rem;
+}
+
+.signal-list li,
+.case-points li {
+  color: var(--text);
 }
 
 .cta-strip {
