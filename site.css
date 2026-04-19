@@ -252,13 +252,17 @@ select {
 }
 
 .hero-grid {
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  align-items: stretch;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.02fr) minmax(290px, 0.74fr);
+  gap: 1.5rem;
+  align-items: start;
 }
 
 .content-grid,
 .contact-layout {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
 }
 
 .eyebrow,
@@ -370,6 +374,12 @@ select {
   padding: 1.45rem;
 }
 
+.hero-card {
+  max-width: 35rem;
+  justify-self: end;
+  align-self: center;
+}
+
 .hero-card::after,
 .content-panel::after,
 .form-card::after,
@@ -388,8 +398,8 @@ select {
 .hero-card h2,
 .content-panel h2,
 .contact-card h2 {
-  font-size: clamp(2.15rem, 4vw, 3rem);
-  line-height: 0.94;
+  font-size: clamp(1.95rem, 3.4vw, 2.65rem);
+  line-height: 1.02;
 }
 
 .hero-card p,
@@ -449,10 +459,15 @@ select {
   margin-bottom: 1.8rem;
 }
 
+.section-head > div {
+  display: grid;
+  gap: 0.8rem;
+}
+
 .section-title {
   max-width: 14ch;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  line-height: 0.94;
+  font-size: clamp(2.15rem, 4.2vw, 3.35rem);
+  line-height: 1.04;
   color: var(--text);
 }
 
@@ -494,33 +509,61 @@ select {
   margin-top: 1rem;
 }
 
+.balanced-panels {
+  align-items: stretch;
+}
+
+.balanced-panels > .content-panel {
+  height: 100%;
+}
+
+.content-panel .panel-tag {
+  margin-bottom: 0.95rem;
+}
+
 .email-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.9rem;
-  text-align: center;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: stretch;
+  text-align: left;
 }
 
 .email-panel .panel-tag {
-  justify-content: center;
+  justify-content: flex-start;
+  margin-bottom: 0;
 }
 
-.email-panel-copy {
+.email-panel-body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  min-height: 100%;
+  padding-top: 1.3rem;
+}
+
+.content-panel .email-panel-heading {
   margin: 0;
-  max-width: 26rem;
-  font-size: 1.08rem;
-  line-height: 1.7;
+  max-width: 100%;
+  font-size: clamp(1.95rem, 3.4vw, 2.65rem);
+  line-height: 1.02;
 }
 
-.inline-email {
-  display: inline-block;
-  margin-top: 0.35rem;
+.email-panel-address {
+  align-self: center;
+  margin: 0 auto;
+  font-size: clamp(1.08rem, 1.55vw, 1.38rem);
+  line-height: 1.18;
   font-weight: 700;
   color: var(--night);
+  text-align: center;
   user-select: all;
   word-break: break-all;
+}
+
+body[data-lang="zh"] .content-panel .email-panel-heading {
+  font-size: clamp(1.45rem, 2.55vw, 1.95rem);
+  line-height: 1.28;
+  letter-spacing: 0;
 }
 
 .contact-card {
@@ -650,6 +693,18 @@ body[data-lang="zh"] .field span {
   text-transform: none;
 }
 
+body[data-lang="zh"] .section-title {
+  font-size: clamp(2rem, 3.8vw, 2.85rem);
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+body[data-lang="zh"] .content-panel h2 {
+  font-size: clamp(2rem, 3.9vw, 2.8rem);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy,
   .hero-card,
@@ -683,6 +738,16 @@ body[data-lang="zh"] .field span {
     grid-template-columns: 1fr;
   }
 
+  .hero-grid {
+    width: 100%;
+  }
+
+  .hero-card {
+    max-width: none;
+    justify-self: stretch;
+    align-self: start;
+  }
+
   .section-head {
     align-items: start;
     flex-direction: column;
@@ -708,6 +773,10 @@ body[data-lang="zh"] .field span {
   .hero h1 {
     font-size: clamp(2.55rem, 13vw, 4rem);
     max-width: none;
+  }
+
+  .section-head > div {
+    gap: 0.7rem;
   }
 
   .hero-card,
