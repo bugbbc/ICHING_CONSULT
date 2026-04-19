@@ -497,58 +497,30 @@ select {
 .email-panel {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.copy-box {
-  display: grid;
-  gap: 0.9rem;
-  margin-top: 1rem;
-}
-
-.copy-input {
-  width: 100%;
-  padding: 1rem 1.05rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(19, 31, 45, 0.14);
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--night);
-  font-size: 1.02rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  box-shadow: inset 0 1px 0 rgba(251, 247, 240, 0.24);
-  cursor: text;
-}
-
-.copy-input:focus {
-  outline: none;
-  border-color: rgba(181, 127, 53, 0.52);
-  box-shadow:
-    0 0 0 4px rgba(201, 164, 106, 0.15),
-    inset 0 1px 0 rgba(251, 247, 240, 0.32);
-}
-
-.copy-button {
-  align-self: start;
-  display: inline-flex;
-  align-items: center;
   justify-content: center;
-  min-height: 3rem;
-  padding: 0.9rem 1.2rem;
-  border: 1px solid rgba(19, 31, 45, 0.12);
-  border-radius: 999px;
-  background: var(--night);
-  color: var(--paper-soft);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  cursor: pointer;
-  box-shadow: var(--shadow-card);
+  align-items: center;
+  gap: 0.9rem;
+  text-align: center;
 }
 
-.copy-button:hover,
-.copy-button:focus-visible {
-  transform: translateY(-1px);
+.email-panel .panel-tag {
+  justify-content: center;
+}
+
+.email-panel-copy {
+  margin: 0;
+  max-width: 26rem;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.inline-email {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-weight: 700;
+  color: var(--night);
+  user-select: all;
+  word-break: break-all;
 }
 
 .contact-card {
@@ -669,7 +641,6 @@ select {
 body[data-lang="zh"] .brand-subtitle,
 body[data-lang="zh"] .lang-switch,
 body[data-lang="zh"] .button,
-body[data-lang="zh"] .copy-button,
 body[data-lang="zh"] .eyebrow,
 body[data-lang="zh"] .section-tag,
 body[data-lang="zh"] .card-kicker,
